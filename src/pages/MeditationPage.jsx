@@ -36,7 +36,8 @@ const MeditationPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col w-full h-[calc(100vh-4rem)] bg-white rounded-lg shadow-md overflow-hidden">
+    // Added dark mode background for the main container
+    <div className="flex flex-col w-full h-[calc(100vh-4rem)] bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
       {/* Background & Player */}
       <div
         className="flex-1 flex flex-col items-center justify-center text-white relative bg-cover bg-center"
@@ -64,18 +65,18 @@ const MeditationPage = () => {
       </div>
 
       {/* Instructions & Transcript */}
-      <div className="bg-white p-6 text-center border-t">
-        <p className="text-gray-700 mb-4">
+      <div className="bg-white p-6 text-center border-t dark:bg-gray-800 dark:border-gray-700">
+        <p className="text-gray-700 dark:text-gray-300 mb-4">
           Find a quiet space, put on your headphones, and press play to begin.
         </p>
         <button
           onClick={() => setShowTranscript(!showTranscript)}
-          className="text-blue-600 hover:underline text-sm font-medium"
+          className="text-blue-600 hover:underline text-sm font-medium dark:text-blue-400"
         >
           {showTranscript ? "Hide Transcript" : "View Full Transcript"}
         </button>
         {showTranscript && (
-          <div className="mt-4 text-left max-w-2xl mx-auto text-gray-600 text-sm leading-relaxed">
+          <div className="mt-4 text-left max-w-2xl mx-auto text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
             <p>
               Welcome to this 5-minute guided meditation for focus. Sit comfortably, close your
               eyes, and take a deep breath in... and out. Let your mind settle...

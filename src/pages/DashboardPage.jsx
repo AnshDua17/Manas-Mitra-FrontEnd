@@ -30,33 +30,33 @@ const DashboardHeader = () => {
 
   return (
     <div className="mb-8">
-      <h1 className="text-3xl font-bold text-slate-800 mb-2">
+      <h1 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">
         {greeting}, Himanshu! 👋
       </h1>
-      <p className="text-slate-600">{currentDate}</p>
+      <p className="text-slate-600 dark:text-gray-300">{currentDate}</p>
     </div>
   );
 };
 
 const QuickActions = () => {
   const actions = [
-    { icon: <Brain className="w-6 h-6 text-blue-600" />, title: 'AI Support', description: 'Chat with your wellness companion', path: '/ai-chat' },
-    { icon: <Heart className="w-6 h-6 text-green-600" />, title: '5-Min Meditation', description: 'Quick mindfulness break', path: '/meditation' },
-    { icon: <Users className="w-6 h-6 text-purple-600" />, title: 'Community Circle', description: 'Connect with peers', path: '/community' },
-    { icon: <MessageSquare className="w-6 h-6 text-orange-600" />, title: 'Vent Jar', description: 'Express your feelings safely', path: '/community' }
+    { icon: <Brain className="w-6 h-6 text-blue-600 dark:text-blue-400" />, title: 'AI Support', description: 'Chat with your wellness companion', path: '/ai-chat' },
+    { icon: <Heart className="w-6 h-6 text-green-600 dark:text-green-500" />, title: '5-Min Meditation', description: 'Quick mindfulness break', path: '/meditation' },
+    { icon: <Users className="w-6 h-6 text-purple-600 dark:text-purple-400" />, title: 'Community Circle', description: 'Connect with peers', path: '/community' },
+    { icon: <MessageSquare className="w-6 h-6 text-orange-600 dark:text-orange-500" />, title: 'Vent Jar', description: 'Express your feelings safely', path: '/community' }
   ];
 
   return (
     <div>
-      <h2 className="text-xl font-semibold text-slate-800 mb-4">Quick Actions</h2>
+      <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Quick Actions</h2>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {actions.map((action, index) => (
           <Link to={action.path} key={index}>
-            <div className="bg-white border border-gray-200 rounded-lg p-4 cursor-pointer hover:shadow-lg h-full transition-shadow text-center">
+            <div className="bg-white border border-gray-200 rounded-lg p-4 cursor-pointer hover:shadow-lg h-full transition-shadow text-center dark:bg-gray-800 dark:border-gray-700">
               <div className="flex flex-col items-center space-y-2">
                 {action.icon}
-                <h3 className="font-medium text-slate-800">{action.title}</h3>
-                <p className="text-sm text-slate-600">{action.description}</p>
+                <h3 className="font-medium text-slate-800 dark:text-white">{action.title}</h3>
+                <p className="text-sm text-slate-600 dark:text-gray-300">{action.description}</p>
               </div>
             </div>
           </Link>
@@ -76,27 +76,27 @@ const CurrentJourney = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
+    <div className="bg-white rounded-lg shadow-md p-6 dark:bg-gray-800">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold text-slate-800">Current Journey</h2>
-        <span className="text-sm text-slate-500">Week 3 of 4</span>
+        <h2 className="text-xl font-semibold text-slate-800 dark:text-white">Current Journey</h2>
+        <span className="text-sm text-slate-500 dark:text-gray-400">Week 3 of 4</span>
       </div>
       <div className="mb-6">
-        <h3 className="text-lg font-medium text-slate-700 mb-2">Stress Management Fundamentals</h3>
-        <div className="w-full bg-gray-200 rounded-full h-2.5"><div className="bg-gradient-to-r from-blue-500 to-green-500 h-2.5 rounded-full" style={{ width: `${progress}%` }}></div></div>
-        <p className="text-sm text-slate-600 mt-2">{progress}% Complete</p>
+        <h3 className="text-lg font-medium text-slate-700 dark:text-gray-200 mb-2">Stress Management Fundamentals</h3>
+        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5"><div className="bg-gradient-to-r from-blue-500 to-green-500 h-2.5 rounded-full" style={{ width: `${progress}%` }}></div></div>
+        <p className="text-sm text-slate-600 dark:text-gray-300 mt-2">{progress}% Complete</p>
       </div>
       <div className="mb-6">
-        <h4 className="font-medium text-slate-700 mb-2 flex items-center"><Target className="w-4 h-4 mr-2 text-blue-600" />Next Up</h4>
-        <p className="text-slate-600 bg-blue-50 rounded-lg p-3">Practice the 4-7-8 breathing technique</p>
+        <h4 className="font-medium text-slate-700 dark:text-gray-200 mb-2 flex items-center"><Target className="w-4 h-4 mr-2 text-blue-600 dark:text-blue-400" />Next Up</h4>
+        <p className="text-slate-600 bg-blue-50 rounded-lg p-3 dark:bg-blue-900/50 dark:text-blue-200">Practice the 4-7-8 breathing technique</p>
       </div>
       <div>
-        <h4 className="font-medium text-slate-700 mb-3">Today's Tasks</h4>
+        <h4 className="font-medium text-slate-700 dark:text-gray-200 mb-3">Today's Tasks</h4>
         <div className="space-y-2">
           {todaysTasks.map((item, index) => (
             <div key={index} className="flex items-center space-x-3">
-              <CheckCircle className={`w-5 h-5 ${item.completed ? 'text-green-500' : 'text-gray-300'}`} />
-              <span className={`${item.completed ? 'text-slate-500 line-through' : 'text-slate-700'}`}>{item.task}</span>
+              <CheckCircle className={`w-5 h-5 ${item.completed ? 'text-green-500' : 'text-gray-300 dark:text-gray-600'}`} />
+              <span className={`${item.completed ? 'text-slate-500 dark:text-gray-400 line-through' : 'text-slate-700 dark:text-gray-200'}`}>{item.task}</span>
             </div>
           ))}
         </div>
@@ -111,20 +111,20 @@ const Recommendations = () => {
     { title: 'Guided Sleep Meditation', time: '15 min audio', tags: ['sleep', 'meditation']},
   ];
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-xl font-semibold text-slate-800 mb-4">Recommended for You</h2>
+    <div className="bg-white rounded-lg shadow-md p-6 dark:bg-gray-800">
+      <h2 className="text-xl font-semibold text-slate-800 dark:text-white mb-4">Recommended for You</h2>
       <div className="space-y-4">
         {recommendations.map((item, index) => (
-          <div key={index} className="border rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors">
-            <h3 className="font-medium text-slate-800 mb-2">{item.title}</h3>
+          <div key={index} className="border rounded-lg p-4 hover:bg-gray-50 cursor-pointer transition-colors dark:border-gray-700 dark:hover:bg-gray-700">
+            <h3 className="font-medium text-slate-800 dark:text-white mb-2">{item.title}</h3>
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <Clock className="w-4 h-4 text-slate-400" />
-                <span className="text-sm text-slate-500">{item.time}</span>
+                <Clock className="w-4 h-4 text-slate-400 dark:text-gray-500" />
+                <span className="text-sm text-slate-500 dark:text-gray-400">{item.time}</span>
               </div>
               <div className="flex space-x-1">
                 {item.tags.map((tag) => (
-                  <span key={tag} className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">{tag}</span>
+                  <span key={tag} className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full dark:bg-blue-900/50 dark:text-blue-400">{tag}</span>
                 ))}
               </div>
             </div>
@@ -142,19 +142,19 @@ const CommunityPulse = () => {
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 h-full">
+    <div className="bg-white rounded-lg shadow-md p-6 h-full dark:bg-gray-800">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-semibold text-slate-800">Community Pulse</h2>
-        <div className="flex items-center space-x-1"><Circle className="w-2 h-2 text-green-500 fill-current" /><span className="text-sm text-green-600 font-medium">Live</span></div>
+        <h2 className="text-xl font-semibold text-slate-800 dark:text-white">Community Pulse</h2>
+        <div className="flex items-center space-x-1"><Circle className="w-2 h-2 text-green-500 fill-current" /><span className="text-sm text-green-600 dark:text-green-500 font-medium">Live</span></div>
       </div>
       <div className="space-y-4">
         {communityPosts.map((post, index) => (
-          <div key={index} className="border rounded-lg p-3 hover:bg-gray-50 transition-colors">
-            <div className="flex items-center justify-between mb-2"><span className="text-sm font-medium text-blue-600">{post.user}</span><span className="text-xs text-slate-500">{post.timeAgo}</span></div>
-            <p className="text-sm text-slate-700 mb-3">{post.content}</p>
+          <div key={index} className="border rounded-lg p-3 hover:bg-gray-50 transition-colors dark:border-gray-700 dark:hover:bg-gray-700">
+            <div className="flex items-center justify-between mb-2"><span className="text-sm font-medium text-blue-600 dark:text-blue-400">{post.user}</span><span className="text-xs text-slate-500 dark:text-gray-400">{post.timeAgo}</span></div>
+            <p className="text-sm text-slate-700 dark:text-gray-200 mb-3">{post.content}</p>
             <div className="flex items-center space-x-4">
-              <button className="flex items-center space-x-1 text-slate-500 hover:text-red-500 text-xs"><ThumbsUp className="w-4 h-4" /><span>{post.likes}</span></button>
-              <button className="flex items-center space-x-1 text-slate-500 hover:text-blue-500 text-xs"><MessageSquare className="w-4 h-4" /><span>{post.comments}</span></button>
+              <button className="flex items-center space-x-1 text-slate-500 hover:text-red-500 text-xs dark:text-gray-400 dark:hover:text-red-500"><ThumbsUp className="w-4 h-4" /><span>{post.likes}</span></button>
+              <button className="flex items-center space-x-1 text-slate-500 hover:text-blue-500 text-xs dark:text-gray-400 dark:hover:text-blue-400"><MessageSquare className="w-4 h-4" /><span>{post.comments}</span></button>
             </div>
           </div>
         ))}
