@@ -56,9 +56,11 @@ const OurStorySection = () => (
 const TeamSection = () => {
     const teamMembers = [
       { name: "Himanshu Ranjan", role: "Founder & Lead Developer", image: "HR" },
-      
       { name: "Moksh Kaushish", role: "Community Manager", image: "MK" },
-      { name: "Parth Prakash", role: "Data & Privacy Specialist", image: "TC" }
+      { name: "Parth Prakash", role: "Data & Privacy Specialist", image: "PP" },
+      { name: "Ansh Dua", role: "Full Stack Developer", image: "AD" },
+      { name: "Tanmay Chadha", role: "", image: "TC" },
+      { name: "Navya Arora", role: "", image: "NA" }
     ];
   
     return (
@@ -125,7 +127,6 @@ const AboutUsPage = () => {
       <OurStorySection />
       <TeamSection />
       <ValuesSection />
-      <Footer />
     </div>
   );
 };

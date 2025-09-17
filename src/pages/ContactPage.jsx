@@ -34,7 +34,6 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
 
       <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 py-20">
         <div className="absolute inset-0 bg-black opacity-20"></div>
@@ -103,7 +102,6 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

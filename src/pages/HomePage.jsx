@@ -165,7 +165,6 @@ const HomePage = () => {
       <FeaturesSection />
       <TestimonialsSection />
       <CTASection />
-      <Footer />
     </div>
   );
 };
